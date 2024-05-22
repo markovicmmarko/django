@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'teretana',
         'USER' : 'root',
-        'PASSWORD' : '1389',
+        'PASSWORD' : '*******',
         'HOST' : 'localhost',
         'OPTIONS' : {
             'init_command' : 'SET default_storage_engine=INNODB'
