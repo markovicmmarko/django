@@ -1,0 +1,26 @@
+<h2>Welcome to our gym...</h2>
+<p>keep those pumps and stay swollen</p><br>
+<p>Choose your workout program: </p>
+
+{% for grupa in grupe %}
+    <a href="?grupa={{grupa.id}}">
+        {% if id_grupe == grupa.id %}
+        <div style="border:1px solid blue; padding:4px; margin:4px; width: 220px; background-color: aqua;">
+        {% endif %}
+        {% if id_grupe != grupa.id %}
+        <div style="border:1px solid blue; padding:4px; margin:4px; width: 220px;">
+        {% endif %}
+        {{grupa.naziv}}</div>
+    </a>
+{% endfor %}
+
+<h3>Exercises for this program:</h3>
+<ul>
+{% for vezba in vezbe %}
+    <li><a href="/detalji/{{vezba.id}}">{{vezba.naziv }}</a></li>
+{% endfor %}
+</ul><hr>
+
+{% if user.is_authenticated %}
+<a href="/odabir/{{id_grupe}}"><strong>Choose this workout</strong></a>
+{% endif %}
